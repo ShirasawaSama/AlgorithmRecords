@@ -9,17 +9,16 @@ public class MST {
             arr[i] = tmp;
             i = j;
         }
-        return index;
+        return tmp;
     }
 
     // edges: Array<[point1, point2, weight]>
-    public static void kruskal(int[][] edges) {
-        int len = edges.length;
+    public static void kruskal(int[][] edges, int pointCount) {
         Arrays.sort(edges, Comparator.comparingInt(o -> o[2]));
         int ans = 0, t = 0, count = 1;
-        int[] points = new int[len];
-        for (int i = 0; i < len; i++) points[i] = i;
-        while (count != len) {
+        int[] points = new int[pointCount];
+        for (int i = 0; i < pointCount; i++) points[i] = i;
+        while (count != pointCount) {
             int[] edge = edges[t++];
             int sa = find(points, edge[0]), sb = find(points, edge[1]);
             if (sa == sb) continue;
