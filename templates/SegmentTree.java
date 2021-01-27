@@ -14,11 +14,10 @@ public class SegmentTree {
 
         private void updateRangeUtil(int si, int ss, int se, int us, int ue, int diff) {
             if (lazy[si] != 0) {
-                Number n = 1;
                 tree[si] += (se - ss + 1) * lazy[si];
                 if (ss != se) {
-                    lazy[si * 2 + 1] = merger.apply(lazy[si * 2 + 1], lazy[si]);
-                    lazy[si * 2 + 2] = merger.apply(lazy[si * 2 + 2], lazy[si]);
+                    lazy[si * 2 + 1] += lazy[si];
+                    lazy[si * 2 + 2] += lazy[si];
                 }
                 lazy[si] = 0;
             }
@@ -26,8 +25,8 @@ public class SegmentTree {
             if (ss >= us && se <= ue) {
                 tree[si] += (se - ss + 1) * diff;
                 if (ss != se) {
-                    lazy[si * 2 + 1] = merger.apply(lazy[si * 2 + 1], diff);
-                    lazy[si * 2 + 2] = merger.apply(lazy[si * 2 + 2], diff);
+                    lazy[si * 2 + 1] += diff;
+                    lazy[si * 2 + 2] += diff;
                 }
                 return;
             }
@@ -45,8 +44,8 @@ public class SegmentTree {
             if (lazy[si] != 0) {
                 tree[si] += (se - ss + 1) * lazy[si];
                 if (ss != se) {
-                    lazy[si * 2 + 1] = merger.apply(lazy[si * 2 + 1], lazy[si]);
-                    lazy[si * 2 + 2] = merger.apply(lazy[si * 2 + 2], lazy[si]);
+                    lazy[si * 2 + 1] += lazy[si];
+                    lazy[si * 2 + 2] += lazy[si];
                 }
                 lazy[si] = 0;
             }
