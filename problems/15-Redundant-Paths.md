@@ -82,7 +82,7 @@ It's possible that adding some other path will also solve the problem (like one 
 
 ## 题意
 
-给一个无向图, 如果需要每个点之间至少有两条不同的路可以到达.
+给一个无向图, 如果需要使每个点之间至少有两条不同的边可以到达, 那么最少需要添加多少条边.
 
 ## 题解
 
