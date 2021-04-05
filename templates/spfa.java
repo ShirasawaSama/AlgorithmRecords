@@ -1,5 +1,5 @@
 // 注释的地方用于判断负环
-public class spfa {
+public class spfa { // 求最短路
     // edge: new int[] { linkedPoint, weight };
     public static int[] spfa(int firstPoint, ArrayList<int[]>[] edges) {
         int len = edges.length;
