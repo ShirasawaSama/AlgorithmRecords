@@ -1,4 +1,4 @@
-public class Tarjan {
+public class Tarjan { // 求解无向图的割点与桥
     public void tarjan(int u) {
         dfn[u] = low[u] = ++index;
         stack.addFirst(u);
