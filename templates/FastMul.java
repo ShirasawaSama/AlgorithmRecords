@@ -13,8 +13,8 @@ class FastMul {
 
     public static long pPow(long x, long n) {
         long res = 1;
-        while (n > 1) {
-            if (n & 1L) res *= x;
+        while (n != 0) {
+            if ((n & 1L) == 1L) res *= x;
             x *= x;
             n >>= 1;
         }
