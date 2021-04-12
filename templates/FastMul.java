@@ -1,14 +1,12 @@
 class FastMul {
-    public static long fastPower(long base, long power) {
-        long result = 1;
-        while (power > 0) {
-            if ((power & 1L) == 0L) {
-                result = result * base % 1000;
-            }
-            power >>= 1;
-            base = (base * base) % 1000;
+    public static long fastPower(long a, long n, long p) {
+        long ans = 1;
+        while (n != 0) {
+            if ((n & 1) != 0) ans = ans * a % p;
+            a = a * a % p;
+            n >>= 1;
         }
-        return result;
+        return ans;
     }
 
     public static long pPow(long x, long n) {
