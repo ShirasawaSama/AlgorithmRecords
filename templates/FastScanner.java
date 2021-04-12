@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class FastScanner {
+    private final PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
     private final BufferedReader br = new BufferedReader(new InputStreamReader(System.in), 16384);
     private StringTokenizer st;
     public FastScanner() { eat(""); }
